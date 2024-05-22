@@ -1,14 +1,11 @@
-import { Restaurants } from './components/restaurants/component'
-import { Header } from './components/header/component'
-import { Footer } from './components/footer/component'
 import { restaurants } from '../constants/mock'
+import { Restaurants } from './components/restaurants/component'
+import { Layout } from './components/layout/component'
 
 export const App = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <Restaurants restaurants={restaurants} />
-      <Footer />
-    </>
+    </Layout>
   )
 }
