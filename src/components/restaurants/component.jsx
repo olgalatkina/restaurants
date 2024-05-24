@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { useState } from 'react'
 import { Restaurant } from '../restaurant/component'
 import { RestaurantTabs } from '../restaurant-tabs/component'

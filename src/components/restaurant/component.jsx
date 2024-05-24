@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { Menu } from "../menu/component"
 import { Reviews } from "../reviews/component"
 
