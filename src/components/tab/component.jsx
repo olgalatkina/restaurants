@@ -1,9 +1,10 @@
-export const Tab = ({ onClick, restaurant }) => {
+export const Tab = ({ onClick, title, isActive }) => {
   return (
     <button
-      onClick={() => onClick(restaurant)}
+      onClick={onClick}
+      disabled={isActive}
     >
-      {restaurant.name}
+      {title}
     </button>
   )
 }

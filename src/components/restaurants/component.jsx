@@ -1,15 +1,10 @@
 /* eslint-disable react/jsx-key */
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Restaurant } from '../restaurant/component'
-import { Tabs } from '../tabs/component'
+import { RestaurantTabs } from '../restaurant-tabs/component'
 
 export const Restaurants = ({ restaurants }) => {
-  const [currentRestaurant, setCurrentRestaurant] = useState(null)
-
-  useEffect(() => {
-    if (!restaurants.length) return
-    setCurrentRestaurant(restaurants[0])
-  }, [restaurants])
+  const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0)
 
   if (!restaurants.length) {
     return (
@@ -19,15 +14,17 @@ export const Restaurants = ({ restaurants }) => {
     )
   }
 
-  const onTabClick = (restaurant) => setCurrentRestaurant(restaurant)
+  const activeRestaurant = restaurants[activeRestaurantIndex]
 
   return (
     <main>
       <h1>Restaurants</h1>
-      <Tabs restaurants={restaurants} onTabClick={onTabClick} />
-      {currentRestaurant && (
-        <Restaurant {...currentRestaurant} />
-      )}
+      <RestaurantTabs
+        restaurants={restaurants}
+        onTabClick={setActiveRestaurantIndex}
+        activeTabIndex={activeRestaurantIndex}
+      />
+      <Restaurant {...activeRestaurant} />
     </main>
   )
 }
