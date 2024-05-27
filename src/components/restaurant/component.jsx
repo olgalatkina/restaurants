@@ -7,7 +7,9 @@ export const Restaurant = ({ name, menu, reviews }) => {
     <div>
       <h2>{name}</h2>
       <Menu menu={menu} />
-      <Reviews reviews={reviews} />
+      {!!reviews?.length && (
+        <Reviews reviews={reviews} />
+      )}
     </div>
   )
 }
