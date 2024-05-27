@@ -1,16 +1,18 @@
-/* eslint-disable react/jsx-key */
-import { useState } from 'react'
 import { Counter } from '../counter/component'
+import { useCount } from '../../hooks/use-count';
 
-const initialValue = 0;
 export const Dish = ({ name, price }) => {
-  const [ count, setCount ] = useState(initialValue)
+  const { count, increment, decrement } = useCount()
 
   return (
     <div>
       <p>{name}</p>
-      <Counter value={count} onChange={setCount} />
-      <p>{count * price}</p>
+      <Counter
+        value={count}
+        increment={increment}
+        decrement={decrement}
+      />
+      <p>Price: {count * price}</p>
     </div>
   )
 }
