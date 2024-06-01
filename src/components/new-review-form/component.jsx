@@ -1,4 +1,5 @@
 import { useReducer } from 'react';
+import { Rating } from '../rating/component';
 
 const DEFAULT_FORM_VALUE = {
   name: '',
@@ -66,16 +67,11 @@ export const NewReviewForm = () => {
           })}
         />
 
-        <label htmlFor="rating">Rating: </label>
-        <input
-          id="rating"
-          type="number"
-          min='0'
-          max='5'
-          value={form.rating}
-          onChange={(evt) => dispatch({
+        <Rating
+          rating={form.rating}
+          onChange={(rating) => dispatch({
             type: 'SET_RATING',
-            payload: Number(evt.target.value)
+            payload: rating
           })}
         />
 
