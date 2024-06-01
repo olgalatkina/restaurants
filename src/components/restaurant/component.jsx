@@ -1,5 +1,6 @@
 import { Menu } from "../menu/component"
 import { Reviews } from "../reviews/component"
+import { NewReviewForm } from '../new-review-form/component'
 
 export const Restaurant = ({ name, menu, reviews }) => {
   return (
@@ -9,6 +10,7 @@ export const Restaurant = ({ name, menu, reviews }) => {
       {!!reviews?.length && (
         <Reviews reviews={reviews} />
       )}
+      <NewReviewForm />
     </div>
   )
 }
