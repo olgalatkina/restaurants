@@ -46,7 +46,6 @@ export const NewReviewForm = () => {
           id="name"
           type="text"
           value={form.name}
-          autoFocus
           onChange={(evt) => dispatch({
             type: 'SET_NAME',
             payload: evt.target.value
