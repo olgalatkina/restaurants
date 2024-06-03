@@ -1,5 +1,6 @@
 import { useReducer } from 'react';
 import { Rating } from '../rating/component';
+import { Button } from '../button/component';
 
 const DEFAULT_FORM_VALUE = {
   name: '',
@@ -74,12 +75,12 @@ export const NewReviewForm = () => {
           })}
         />
 
-        <button
+        <Button
           type='submit'
           disabled={form.rating === 0}
         >
           ADD REVIEW
-        </button>
+        </Button>
       </form>
     </div>
   )

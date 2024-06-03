@@ -1,23 +1,24 @@
-import { CounterSettings } from "../../../constants"
+import { CounterSettings } from '../../../constants'
+import { Button } from '../button/component'
 
 export const Counter = ({ value, increment, decrement }) => {
   return (
     <div>
-      <button
+      <Button
         onClick={decrement}
         disabled={value === CounterSettings.MIN}
         aria-label='decrement'
       >
         -
-      </button>
+      </Button>
       {value}
-      <button
+      <Button
         onClick={increment}
         disabled={value === CounterSettings.MAX}
         aria-label='increment'
       >
         +
-      </button>
+      </Button>
     </div>
   )
 }
