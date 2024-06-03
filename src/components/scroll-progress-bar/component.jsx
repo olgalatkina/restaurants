@@ -1,6 +1,6 @@
 import { useScroll } from '../../hooks/use-scroll';
 
-export const ScrollProgressBar = () => {
+export const ProgressBar = () => {
   const barPercentWidth = useScroll();
 
   return (
@@ -9,7 +9,7 @@ export const ScrollProgressBar = () => {
         position: 'fixed',
         top: 0,
         left: 0,
-        height: 5,
+        height: 4,
         width: barPercentWidth + '%',
         background:
           "linear-gradient( 90deg,rgb(157,134,233) 0%,rgb(97,218,251) 100% )",
