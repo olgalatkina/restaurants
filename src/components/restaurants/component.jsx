@@ -18,12 +18,17 @@ export const Restaurants = ({ restaurants }) => {
   return (
     <main>
       <h1>Restaurants</h1>
+
       <RestaurantTabs
         restaurants={restaurants}
         onTabClick={setActiveRestaurantIndex}
         activeTabIndex={activeRestaurantIndex}
       />
+
       <Restaurant {...activeRestaurant} />
+      {Array.from({ length: 10 }).map((_, index) => (
+        <Restaurant key={index} {...activeRestaurant} />
+      ))}
     </main>
   )
 }
