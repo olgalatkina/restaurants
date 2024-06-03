@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { SetterThemeContext } from '../../contexts/theme'
+import { Button } from '../button/component'
 import styles from './styles.module.css'
 
 export const Header = () => {
@@ -11,11 +12,11 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <button onClick={handleThemeChange}>change theme</button>
+      <Button onClick={handleThemeChange}>change theme</Button>
       HEADER
       <div>
         <span>name</span>
-        <button onClick={() => console.log('click')}>SignIn</button>
+        <Button onClick={() => console.log('click')}>SignIn</Button>
       </div>
     </header>
   )

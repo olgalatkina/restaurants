@@ -1,11 +1,16 @@
+import { useContext } from 'react'
+import { ThemeContext } from '../../contexts/theme'
 import styles from './styles.module.css'
 const Star = ({ value, onClick, active, children }) => {
+  const theme = useContext(ThemeContext)
+  const classNames = `${theme === 'light' ? styles.light : styles.dark} ${active ? styles.active : ''}`
+
   return (
     <button
       type='button'
       value={value}
       onClick={() => onClick(value)}
-      className={active ? styles.active : ''}
+      className={classNames}
       aria-label={`rating ${value}`}
     >
       {children || value}
