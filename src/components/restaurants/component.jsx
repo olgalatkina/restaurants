@@ -26,9 +26,6 @@ export const Restaurants = ({ restaurants }) => {
       />
 
       <Restaurant {...activeRestaurant} />
-      {Array.from({ length: 10 }).map((_, index) => (
-        <Restaurant key={index} {...activeRestaurant} />
-      ))}
     </main>
   )
 }
